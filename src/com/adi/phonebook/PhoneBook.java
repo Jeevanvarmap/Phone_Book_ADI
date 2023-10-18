@@ -4,14 +4,20 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-class PhoneBook  {
+class PhoneBook {
     private List<Contact> contacts;
 
     public PhoneBook() {
         contacts = new ArrayList<>();
     }
 
-    public void addContact(String name, String phoneNumber) {
+    public void addContact(String name, String phoneNumber) throws InvalidNameException, InvalidPhoneNumberException {
+        if (!isValidName(name)) {
+            throw new InvalidNameException("Invalid name. Name should contain only alphabets.");
+        }
+        if (!isValidPhoneNumber(phoneNumber)) {
+            throw new InvalidPhoneNumberException("Invalid phone number. It should contain 10 digits.");
+        }
         Contact contact = new Contact(name, phoneNumber);
         contacts.add(contact);
     }
@@ -59,5 +65,13 @@ class PhoneBook  {
             }
         }
         System.out.println("Contact not found with the given name.");
+    }
+
+    private static boolean isValidPhoneNumber(String phoneNumber) {
+        return phoneNumber.matches("\\d{10}");
+    }
+
+    private static boolean isValidName(String name) {
+        return name.matches("[a-zA-Z]+");
     }
 }

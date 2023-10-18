@@ -12,17 +12,17 @@ class Contact {
     public String getName() {
         return name;
     }
-    
-    public void setName(String inputName) {
-        this.name=inputName;
-    }
 
     public String getPhoneNumber() {
         return phoneNumber;
     }
     
-    public void setPhoneNumber(String inputPhoneNumer) {
-        this.phoneNumber=inputPhoneNumer;
+    public void setName(String inputName) {
+        this.name=inputName;
+    }
+
+    public void setPhoneNumber(String inputPhoneNumber) {
+        this.phoneNumber=inputPhoneNumber;
     }
 
     @Override
