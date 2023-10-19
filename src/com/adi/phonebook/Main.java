@@ -20,8 +20,10 @@ public class Main {
                 System.out.println("6. Exit");
                 System.out.print("Enter your choice: ");
 
-                int choice = scanner.nextInt();
-                scanner.nextLine();  // Consume the newline character
+                int choice = 6;
+                if(scanner.hasNextInt()) {
+                	choice = scanner.nextInt();
+                }  
 
                 switch (choice) {
                     case 1:
