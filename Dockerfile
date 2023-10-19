@@ -1,6 +1,6 @@
 FROM openjdk
 
-MAINTAINER jeevan
+MAINTAINER adi/phonebook
 
 WORKDIR /app
 
